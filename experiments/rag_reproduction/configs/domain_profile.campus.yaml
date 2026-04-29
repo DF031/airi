@@ -1,0 +1,127 @@
+domain:
+  id: campus_qa
+  name: campus_knowledge_qa
+  language: zh
+  description: Campus policy, academic affairs, student services, and activity notices.
+  entities:
+    canonical: 华中农业大学
+    aliases:
+      - 华中农业大学
+      - 华农
+      - HZAU
+
+document_types:
+  - policy
+  - handbook
+  - notice
+  - guide
+  - table
+
+boundaries:
+  realtime:
+    description: Questions requiring live status, remaining quota, current queue, today's opening state, or future unpublished policy should abstain.
+    terms:
+      - 今天
+      - 明天
+      - 当前
+      - 实时
+      - 正在
+      - 还剩
+      - 空座
+      - 排队
+      - 最新通知
+      - 预测
+    patterns:
+      - "(2025|2026|2027|2028|2029)年.{0,24}(通知|安排|名单|政策|项目|截止|报名|手册|放假|最新|标准|分数线|专业|培养方案)"
+      - "(2025|2026|2027|2028|2029)级.{0,24}(手册|专业|培养方案|名单)"
+      - "(今年|明年|未来).{0,24}(预测|会不会|是否会|还会|取消|增加|新增|临时|上涨|截止|报名)"
+      - "(现在|当前).{0,16}(排队|空座|余额|在岗|修好|能不能进|开门|下班|故障|剩余)"
+      - "(现在|当前).{0,16}(办公室|在哪|位置|在岗)"
+  privacy:
+    description: Questions asking for personal grades, personal applications, private phone numbers, identity numbers, or account access should abstain.
+    terms:
+      - 身份证号
+      - 私人电话
+      - 个人手机号
+      - 私人微信
+      - 家庭住址
+      - 家庭电话
+    patterns:
+      - "我的.{0,12}(成绩|绩点|处分|申请|余额|宿舍|录取结果)"
+      - "学号\\d+.{0,18}(成绩|绩点|处分|手机号|宿舍)"
+      - "(张三|李四|某位|某个).{0,18}(成绩|绩点|处分|手机号|宿舍|办公室)"
+      - "某个学生.{0,18}(处分|认定结果|手机号|宿舍|贫困生)"
+      - "(领导|老师|医生).{0,12}(私人|家庭).{0,8}(电话|微信|住址|地址)"
+  safety:
+    description: Questions asking for cheating, forgery, bypassing authentication, or evading rules should refuse.
+    terms:
+      - 绕过
+      - 破解
+      - 规避
+      - 伪造
+      - 篡改
+      - 作弊
+      - 代考
+      - 代写
+      - 未公开
+      - 虚假
+      - 私自
+      - 别人的统一身份认证
+    patterns:
+      - "(伪造|篡改|修改).{0,18}(成绩|证明|材料|记录)"
+      - "(绕过|破解|规避).{0,18}(认证|系统|查重|检测)"
+      - "(花钱|购买|买).{0,18}(毕业证|学位证|证明|原件)"
+      - "(代写|AI代写).{0,18}(论文|作业|毕业论文)"
+      - "(未公开).{0,18}(试卷|考试)"
+  out_of_scope_service:
+    description: Questions asking non-campus administrative services that the knowledge base cannot provide should abstain.
+    terms:
+      - 驾驶证年审
+      - 护照加急
+      - 代办护照
+  unsupported_policy:
+    description: Questions containing unsupported credential or policy premises should abstain.
+    terms: []
+    patterns:
+      - "(直接免试|免试).{0,10}(获得|拿到).{0,10}博士学位"
+
+terminology:
+  notes: >
+    Domain terms may be added here for external adaptation. The Python pipeline
+    must treat them as configurable hints, not hard-coded rules.
+  synonyms:
+    - term: 科研平台
+      aliases:
+        - 全国重点实验室
+        - 国家工程
+        - 研究中心
+        - 创新平台
+        - 科技合作基地
+        - 研发中心
+    - term: 科研项目
+      aliases:
+        - 获批科研项目
+        - 经费
+        - 亿元
+    - term: 双一流
+      aliases:
+        - 双 一流
+        - 建设学科
+    - term: 学科领域
+      aliases:
+        - ESI
+        - 前1%
+        - 前1‰
+    - term: 研究领域
+      aliases:
+        - 标志性成果
+        - 研究成果
+        - 杂交油菜
+        - 绿色超级稻
+        - 优质种猪
+        - 动物疫苗
+        - 优质柑橘
+        - 试管种薯
+        - 棉花
+        - 玉米
+        - 淡水鱼

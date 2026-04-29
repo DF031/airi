@@ -1,0 +1,112 @@
+pipeline:
+  name: portable_rag_default
+  description: >
+    Domain-portable RAG pipeline. Domain knowledge must be provided through
+    corpus files, domain_profile, schema, and evaluation sets, not hard-coded
+    Python rules.
+
+corpus:
+  data_dir: experiments/rag_reproduction/data
+  domain_profile: experiments/rag_reproduction/configs/domain_profile.campus.yaml
+  chunking:
+    parent_chunk_size: 1200
+    parent_chunk_overlap: 160
+    child_chunk_size: 320
+    child_chunk_overlap: 80
+    preserve_headings: true
+    preserve_tables_as_rows: true
+    keep_source_metadata: true
+
+indexes:
+  sparse:
+    enabled: true
+    backend: bm25
+  lexical:
+    enabled: true
+    backend: tfidf
+  dense:
+    enabled: false
+    backend: faiss
+    embedding_model: ""
+  fusion:
+    method: rrf
+    rrf_k: 60
+    top_k: 8
+    candidate_k: 32
+
+query_processing:
+  rewrite:
+    enabled: true
+    mode: crag_confidence_triggered
+    llm_provider: zhipu
+    model: GLM-4.7-flash
+    cache: true
+  decompose:
+    enabled: true
+    max_subqueries: 3
+    trigger: complex_or_low_confidence
+
+retrieval:
+  parent_child: true
+  source_expansion: true
+  diversity:
+    enabled: true
+    max_chunks_per_source: 3
+
+evidence_evaluator:
+  method: crag_lite
+  confidence_thresholds:
+    low: 0.18
+    high: 0.72
+  actions:
+    low: rewrite_and_expand
+    medium: filter_and_expand
+    high: answer
+
+note_memory:
+  enabled: true
+  method: deepnote_lite
+  max_steps: 3
+  max_fail_steps: 2
+  use_llm: true
+  cache: true
+
+generation:
+  provider: zhipu
+  model: GLM-4.7-flash
+  mode: grounded_answer
+  require_citations: true
+  abstain_when_insufficient: true
+  max_context_chars: 4500
+
+verification:
+  citation_check: true
+  hallucination_check: true
+  realtime_boundary_check: true
+  privacy_boundary_check: true
+
+evaluation:
+  schema_path: experiments/rag_reproduction/configs/rageval_schema.campus.yaml
+  golden_set: experiments/rag_reproduction/datasets/dataset.json
+  negative_set: experiments/rag_reproduction/datasets/negative_questions.json
+  metrics:
+    retrieval:
+      - recall_at_k
+      - ndcg_at_k
+      - mrr_at_k
+      - eir
+    generation:
+      - completeness
+      - hallucination
+      - irrelevance
+      - faithfulness
+    safety:
+      - negative_rejection_accuracy
+      - privacy_refusal_accuracy
+      - realtime_refusal_accuracy
+  llm_judge:
+    enabled: false
+    provider: zhipu
+    model: GLM-4.7-flash
+    sample_size: 50
+    cache: true

@@ -1,0 +1,506 @@
+{
+  "annotation_note": "CSV answer-level annotation. It is stricter than usable_proxy: retrieval/evidence hit alone does not count as complete correctness. This evaluator does not call an LLM.",
+  "input_csv": "C:\\duan\\home\\BS\\airi\\experiments\\rag_reproduction\\results\\portable_rag\\portable_rag_v4_answer_evidence_full_details.csv",
+  "total_count": 1324,
+  "positive_count": 1264,
+  "negative_count": 60,
+  "positive_strict_accuracy": 0.560127,
+  "positive_usable_accuracy": 0.731804,
+  "positive_partial_rate": 0.133703,
+  "negative_accuracy": 0.4,
+  "overall_strict_accuracy": 0.55287,
+  "overall_usable_accuracy": 0.716767,
+  "overall_weighted_score": 0.739615,
+  "review_queue_count": 592,
+  "review_queue_rate": 0.44713,
+  "avg_latency_ms": 6857.498513,
+  "label_count": {
+    "complete_correct": 708,
+    "correct_rejection": 16,
+    "false_answer": 36,
+    "incorrect": 104,
+    "incorrect_refusal": 66,
+    "partial_correct": 169,
+    "safe_rejection": 8,
+    "unsupported_correct_content": 74,
+    "usable_but_noisy": 143
+  },
+  "positive_label_count": {
+    "complete_correct": 708,
+    "incorrect": 104,
+    "incorrect_refusal": 66,
+    "partial_correct": 169,
+    "unsupported_correct_content": 74,
+    "usable_but_noisy": 143
+  },
+  "negative_label_count": {
+    "correct_rejection": 16,
+    "false_answer": 36,
+    "safe_rejection": 8
+  },
+  "positive_category_label_count": {
+    ":财务政策-学费与资助": {
+      "complete_correct": 6,
+      "usable_but_noisy": 1
+    },
+    "unknown": {
+      "partial_correct": 1,
+      "unsupported_correct_content": 1
+    },
+    "关于开展华中农业大学学生会部门负责人候选人报名推荐工作的通知.txt": {
+      "unsupported_correct_content": 1
+    },
+    "国际事务-其他": {
+      "complete_correct": 1
+    },
+    "学分政策": {
+      "complete_correct": 2,
+      "incorrect": 1,
+      "partial_correct": 1
+    },
+    "学术会议与交流-其他": {
+      "complete_correct": 1,
+      "incorrect_refusal": 1
+    },
+    "学术政策-其他": {
+      "complete_correct": 86,
+      "incorrect": 14,
+      "incorrect_refusal": 9,
+      "partial_correct": 22,
+      "unsupported_correct_content": 5,
+      "usable_but_noisy": 21
+    },
+    "学术政策-学术会议与交流": {
+      "complete_correct": 22,
+      "incorrect": 1,
+      "incorrect_refusal": 2,
+      "partial_correct": 4,
+      "unsupported_correct_content": 1,
+      "usable_but_noisy": 1
+    },
+    "学术政策-科研与项目管理": {
+      "complete_correct": 73,
+      "incorrect": 15,
+      "incorrect_refusal": 6,
+      "partial_correct": 18,
+      "unsupported_correct_content": 15,
+      "usable_but_noisy": 18
+    },
+    "学术政策-行政管理": {
+      "complete_correct": 1
+    },
+    "学校概况与章程-其他": {
+      "complete_correct": 1
+    },
+    "学籍管理-其他": {
+      "partial_correct": 1
+    },
+    "学费与资助-其他": {
+      "complete_correct": 1
+    },
+    "教学管理-其他": {
+      "complete_correct": 2,
+      "unsupported_correct_content": 1
+    },
+    "教学管理-教学管理": {
+      "complete_correct": 1
+    },
+    "无": {
+      "incorrect": 1
+    },
+    "校内资源-其他": {
+      "complete_correct": 1
+    },
+    "校内资源-学习资源管理": {
+      "complete_correct": 1,
+      "incorrect": 2,
+      "incorrect_refusal": 3,
+      "partial_correct": 2,
+      "usable_but_noisy": 12
+    },
+    "校内资源-计算机与网络服务": {
+      "complete_correct": 9,
+      "incorrect": 4,
+      "partial_correct": 4,
+      "usable_but_noisy": 2
+    },
+    "校园活动-其他": {
+      "incorrect": 1
+    },
+    "校园生活-住宿管理": {
+      "complete_correct": 6,
+      "incorrect": 1,
+      "incorrect_refusal": 1,
+      "partial_correct": 3,
+      "unsupported_correct_content": 9,
+      "usable_but_noisy": 1
+    },
+    "校园生活-后勤管理": {
+      "incorrect": 2,
+      "incorrect_refusal": 1
+    },
+    "校园生活-学校概况与章程": {
+      "incorrect": 1,
+      "usable_but_noisy": 1
+    },
+    "校园生活-安全与健康": {
+      "complete_correct": 37,
+      "incorrect": 3,
+      "incorrect_refusal": 3,
+      "partial_correct": 2,
+      "unsupported_correct_content": 1,
+      "usable_but_noisy": 5
+    },
+    "校园生活-校园活动": {
+      "complete_correct": 25,
+      "incorrect": 3,
+      "incorrect_refusal": 2,
+      "partial_correct": 1,
+      "usable_but_noisy": 1
+    },
+    "校外活动与校企合作-其他": {
+      "complete_correct": 8,
+      "incorrect": 2,
+      "incorrect_refusal": 1,
+      "partial_correct": 2,
+      "usable_but_noisy": 4
+    },
+    "校规校纪": {
+      "complete_correct": 1
+    },
+    "校规校纪-其他": {
+      "complete_correct": 15,
+      "partial_correct": 2,
+      "usable_but_noisy": 3
+    },
+    "科研与项目管理-其他": {
+      "incorrect": 1
+    },
+    "职业与就业-其他": {
+      "unsupported_correct_content": 1
+    },
+    "职业与就业-职业与就业": {
+      "complete_correct": 1
+    },
+    "行政与人事管理-其他": {
+      "complete_correct": 5,
+      "unsupported_correct_content": 1
+    },
+    "行政管理-其他": {
+      "incorrect_refusal": 1
+    },
+    "行政管理-国际事务": {
+      "complete_correct": 2,
+      "incorrect_refusal": 1,
+      "partial_correct": 2,
+      "usable_but_noisy": 4
+    },
+    "行政管理-学籍管理": {
+      "complete_correct": 74,
+      "incorrect": 6,
+      "incorrect_refusal": 4,
+      "partial_correct": 24,
+      "unsupported_correct_content": 9,
+      "usable_but_noisy": 6
+    },
+    "行政管理-招生与录取": {
+      "complete_correct": 27,
+      "incorrect": 1,
+      "incorrect_refusal": 2,
+      "partial_correct": 5,
+      "unsupported_correct_content": 1,
+      "usable_but_noisy": 7
+    },
+    "行政管理-教学管理": {
+      "complete_correct": 91,
+      "incorrect": 17,
+      "incorrect_refusal": 4,
+      "partial_correct": 19,
+      "usable_but_noisy": 12
+    },
+    "行政管理-校历与日常事务": {
+      "complete_correct": 13,
+      "incorrect": 2,
+      "partial_correct": 2,
+      "usable_but_noisy": 1
+    },
+    "行政管理-校外活动与校企合作": {
+      "complete_correct": 10,
+      "incorrect": 3,
+      "incorrect_refusal": 1,
+      "partial_correct": 5,
+      "usable_but_noisy": 2
+    },
+    "行政管理-校规校纪": {
+      "complete_correct": 89,
+      "incorrect": 10,
+      "incorrect_refusal": 20,
+      "partial_correct": 18,
+      "unsupported_correct_content": 27,
+      "usable_but_noisy": 25
+    },
+    "行政管理-校规校纪来进行": {
+      "usable_but_noisy": 1
+    },
+    "行政管理-职业与就业": {
+      "complete_correct": 13,
+      "incorrect": 4,
+      "incorrect_refusal": 1,
+      "partial_correct": 10,
+      "usable_but_noisy": 5
+    },
+    "行政管理-行政与人事管理": {
+      "complete_correct": 15,
+      "incorrect": 1,
+      "incorrect_refusal": 1,
+      "partial_correct": 2,
+      "usable_but_noisy": 1
+    },
+    "行政管理-证书与文件办理": {
+      "complete_correct": 2,
+      "incorrect_refusal": 1
+    },
+    "行政管理—国际事务": {
+      "complete_correct": 3,
+      "partial_correct": 6,
+      "usable_but_noisy": 3
+    },
+    "规章制度分类文件-行政管理-其他": {
+      "complete_correct": 1,
+      "incorrect": 3,
+      "partial_correct": 1
+    },
+    "证书与文件办理-其他": {
+      "partial_correct": 1
+    },
+    "证书与文件办理-证书与文件办理": {
+      "complete_correct": 2,
+      "incorrect": 2
+    },
+    "财务政策-其他": {
+      "complete_correct": 3,
+      "partial_correct": 1,
+      "usable_but_noisy": 1
+    },
+    "财务政策-学费与资助": {
+      "complete_correct": 53,
+      "incorrect": 2,
+      "incorrect_refusal": 1,
+      "partial_correct": 6,
+      "unsupported_correct_content": 1,
+      "usable_but_noisy": 5
+    },
+    "财务政策-补助": {
+      "partial_correct": 3
+    },
+    "财务政策-财务报销与补助": {
+      "complete_correct": 4,
+      "incorrect": 1,
+      "partial_correct": 1
+    }
+  },
+  "negative_category_label_count": {
+    "ambiguous_contact": {
+      "correct_rejection": 1
+    },
+    "ambiguous_private": {
+      "correct_rejection": 1
+    },
+    "dynamic_time": {
+      "correct_rejection": 1
+    },
+    "false_premise": {
+      "correct_rejection": 1,
+      "false_answer": 2
+    },
+    "false_premise_contact": {
+      "false_answer": 1
+    },
+    "false_premise_policy": {
+      "false_answer": 1
+    },
+    "future_false_premise": {
+      "false_answer": 2
+    },
+    "future_notice": {
+      "false_answer": 1
+    },
+    "future_policy": {
+      "false_answer": 4
+    },
+    "future_project": {
+      "false_answer": 1
+    },
+    "out_of_scope": {
+      "false_answer": 3
+    },
+    "out_of_scope_contact": {
+      "false_answer": 1
+    },
+    "out_of_scope_future": {
+      "false_answer": 1
+    },
+    "out_of_scope_service": {
+      "false_answer": 2
+    },
+    "personal_private": {
+      "correct_rejection": 3,
+      "false_answer": 4
+    },
+    "personal_private_contact": {
+      "correct_rejection": 1,
+      "false_answer": 3
+    },
+    "personal_private_realtime": {
+      "false_answer": 2
+    },
+    "prediction": {
+      "correct_rejection": 1
+    },
+    "prediction_policy": {
+      "correct_rejection": 1
+    },
+    "prediction_realtime": {
+      "false_answer": 1
+    },
+    "realtime_access": {
+      "false_answer": 1
+    },
+    "realtime_life": {
+      "false_answer": 1
+    },
+    "realtime_notice": {
+      "correct_rejection": 1
+    },
+    "realtime_office": {
+      "correct_rejection": 1
+    },
+    "realtime_status": {
+      "correct_rejection": 1,
+      "false_answer": 4
+    },
+    "unsafe_academic_integrity": {
+      "safe_rejection": 1
+    },
+    "unsafe_account": {
+      "safe_rejection": 1
+    },
+    "unsafe_evasion": {
+      "correct_rejection": 1
+    },
+    "unsafe_false_premise": {
+      "safe_rejection": 1
+    },
+    "unsafe_policy": {
+      "correct_rejection": 1
+    },
+    "unsafe_policy_evasion": {
+      "correct_rejection": 1,
+      "safe_rejection": 1
+    },
+    "unsafe_request": {
+      "false_answer": 1,
+      "safe_rejection": 4
+    }
+  },
+  "top_positive_error_categories": [
+    {
+      "category": "行政管理-校规校纪",
+      "count": 48
+    },
+    {
+      "category": "学术政策-其他",
+      "count": 45
+    },
+    {
+      "category": "行政管理-教学管理",
+      "count": 40
+    },
+    {
+      "category": "学术政策-科研与项目管理",
+      "count": 39
+    },
+    {
+      "category": "行政管理-学籍管理",
+      "count": 34
+    },
+    {
+      "category": "行政管理-职业与就业",
+      "count": 15
+    },
+    {
+      "category": "财务政策-学费与资助",
+      "count": 9
+    },
+    {
+      "category": "行政管理-校外活动与校企合作",
+      "count": 9
+    },
+    {
+      "category": "校内资源-计算机与网络服务",
+      "count": 8
+    },
+    {
+      "category": "校园生活-安全与健康",
+      "count": 8
+    },
+    {
+      "category": "行政管理-招生与录取",
+      "count": 8
+    },
+    {
+      "category": "学术政策-学术会议与交流",
+      "count": 7
+    }
+  ],
+  "top_negative_error_categories": [
+    {
+      "category": "realtime_status",
+      "count": 4
+    },
+    {
+      "category": "personal_private",
+      "count": 4
+    },
+    {
+      "category": "future_policy",
+      "count": 4
+    },
+    {
+      "category": "out_of_scope",
+      "count": 3
+    },
+    {
+      "category": "personal_private_contact",
+      "count": 3
+    },
+    {
+      "category": "false_premise",
+      "count": 2
+    },
+    {
+      "category": "future_false_premise",
+      "count": 2
+    },
+    {
+      "category": "personal_private_realtime",
+      "count": 2
+    },
+    {
+      "category": "out_of_scope_service",
+      "count": 2
+    },
+    {
+      "category": "out_of_scope_future",
+      "count": 1
+    },
+    {
+      "category": "false_premise_contact",
+      "count": 1
+    },
+    {
+      "category": "future_project",
+      "count": 1
+    }
+  ]
+}

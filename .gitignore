@@ -1,0 +1,27 @@
+.env
+*.pyc
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# local environments and dependencies
+venv/
+frontend/node_modules/
+frontend/dist/
+
+# local runtime outputs
+.logs/
+tmp/
+output/
+data/indexes/
+data/tts_cache/
+data/memory/*.sqlite3
+data/memory/*.sqlite3-journal
+data/memory/test_*.sqlite3
+experiments/rag_reproduction/results/logs/
+experiments/rag_reproduction/indexes/
+
+# local archives / downloaded references
+archive/
+airi/
